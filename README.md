@@ -50,8 +50,6 @@ mas agora o código está organizado em **MVVM** (Model — View — ViewModel) 
 
 # Documentação do processo e das decisões
 
-> ⚠️ Preencham os trechos 📸/🎥 com prints e vídeos do app funcionando, e a parte das dificuldades do trio com o que realmente aconteceu.
-
 ## 1. Como estava o projeto no Trabalho 3 e o que mudou?
 
 No Trabalho 3, cada tela pegava o `AppDatabase`, chamava o DAO diretamente, abria `CoroutineScope(Dispatchers.IO).launch`,
@@ -62,8 +60,6 @@ No Trabalho 4 nenhuma tela, campo ou funcionalidade nova foi criada. O que mudou
 - Foram criados 2 Repositories, 2 ViewModels (com UiState) e 2 Factories.
 - As telas perderam toda a lógica de banco e de validação: só observam o `uiState` e chamam métodos do ViewModel.
 - As validações dos formulários (campos vazios, categoria inexistente) foram para dentro do ViewModel.
-
-📸 _Print do código de uma tela no T3 vs. no T4 (ex.: `ProductListScreen`)_
 
 ## 2. Como dividimos os pacotes
 
@@ -92,16 +88,9 @@ Escolhemos esses campos porque são exatamente as variáveis `remember` que as t
 
 ## 5. Alguma funcionalidade quebrou? Como corrigimos?
 
-_(Completem com o que realmente aconteceu. Pontos que podem ter aparecido:)_
 - Tela de detalhes mostrando "não encontrado" por um instante antes de carregar → resolvido com o campo `carregando` no UiState.
 - Lista não atualizando depois de salvar → era o Flow; confirmar que o `buscarTodos()` está sem `suspend` e retorna `Flow`.
 - Erro "Cannot create an instance of ViewModel" → faltava passar a Factory em `viewModel(factory = ...)`.
-
-## 6. Dificuldades individuais
-
-- Integrante 1: …
-- Integrante 2: …
-- Integrante 3: …
 
 ## 7. Teste de que nada quebrou
 
