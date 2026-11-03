@@ -91,9 +91,3 @@ Escolhemos esses campos porque são exatamente as variáveis `remember` que as t
 - Tela de detalhes mostrando "não encontrado" por um instante antes de carregar → resolvido com o campo `carregando` no UiState.
 - Lista não atualizando depois de salvar → era o Flow; confirmar que o `buscarTodos()` está sem `suspend` e retorna `Flow`.
 - Erro "Cannot create an instance of ViewModel" → faltava passar a Factory em `viewModel(factory = ...)`.
-
-## 7. Teste de que nada quebrou
-
-Roteiro: adicionar → editar → favoritar/destacar → remover (produto e categoria) → abrir detalhes → fechar o app e reabrir.
-
-🎥 _Vídeo do teste completo_ · 📸 _Prints antes/depois de fechar e reabrir_
